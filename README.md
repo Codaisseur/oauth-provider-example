@@ -25,6 +25,24 @@ If you ever want to roll back the last migration, you can run:
 $ yarn run db:rollback
 ```
 
+To roll back all migrations, run:
+
+```bash
+$ yarn run db:rollback:all
+```
+
+To reset the database, run:
+
+```bash
+$ yarn run db:drop && yarn run db:create && yarn run db:migrate
+```
+
+or:
+
+```bash
+$ yarn run db:reset
+```
+
 ## Creating Models
 
 Create models from the command line like so:
