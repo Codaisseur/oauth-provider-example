@@ -1,6 +1,15 @@
 # OAuth2 Provider Example with Express and Sequelize Postgres
 
-Start by installing the dependencies:
+Example implementation of the OAuth 2 protocol using Express, Sequelize,
+and PostgreSQL.
+
+## Dependencies
+
+  - Node version >= 7.6.0 (see: `node -v`)
+  - Yarn (see: [install instructions](https://yarnpkg.com/en/docs/install))
+  - Postgres version >= 9.3
+
+Start by installing the npm package dependencies:
 
 ```bash
 $ yarn install
