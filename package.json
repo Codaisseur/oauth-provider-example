@@ -7,6 +7,7 @@
   "author": "Codaisseur <support@codaisseur.com>",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "db:create": "node_modules/.bin/sequelize db:create",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
     "db:rollback": "node_modules/.bin/sequelize db:migrate:undo",

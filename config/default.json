@@ -5,5 +5,6 @@
   "cors": {
     "origin": true,
     "credentials": true
-  }
+  },
+  "secret": "change me (session secret)"
 }
