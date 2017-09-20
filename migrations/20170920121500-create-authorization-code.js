@@ -34,6 +34,15 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+      redirect_uri: {
+        allowNull: false,
+        type: Sequelize.TEXT
+      },
+      scopes: {
+        allowNull: false,
+        defaultValue: ['read'],
+        type: Sequelize.ARRAY(Sequelize.STRING)
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE

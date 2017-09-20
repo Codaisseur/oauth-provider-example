@@ -5,6 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER,
     access_token: DataTypes.TEXT,
     access_token_expires_at: DataTypes.DATE,
+    redirect_uri: DataTypes.TEXT,
+    scopes: DataTypes.ARRAY(DataTypes.STRING),
     refresh_token: DataTypes.TEXT,
     refresh_token_expires_at: DataTypes.DATE
   }, {

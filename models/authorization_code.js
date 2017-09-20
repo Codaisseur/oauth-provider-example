@@ -4,7 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     client_id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
     authorization_code: DataTypes.TEXT,
-    expires_at: DataTypes.DATE
+    expires_at: DataTypes.DATE,
+    redirect_uri: DataTypes.TEXT,
+    scopes: DataTypes.ARRAY(DataTypes.STRING)
   }, {
     underscored: true,
     classMethods: {
