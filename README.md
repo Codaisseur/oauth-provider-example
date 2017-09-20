@@ -15,8 +15,7 @@ Start by installing the npm package dependencies:
 $ yarn install
 ```
 
-Then check the [database config](/config/config.json) and create the
-database:
+Then check the example [database config](/config/database.example.json), copy it to `config/database.json`, update it to match your local env, and create the database:
 
 ```bash
 $ yarn run db:create

@@ -15,6 +15,7 @@
     "db:reset": "yarn run db:drop && yarn run db:create && yarn run db:migrate"
   },
   "dependencies": {
+    "config": "^1.26.2",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.8.4"
