@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
           foreignKey: 'user_id',
           as: 'owner'
         });
+
+        oauth_client.hasMany(models.authorization_code, {
+          foreignKey: 'client_id',
+          as: 'authorization_codes'
+        });
       }
     }
   });

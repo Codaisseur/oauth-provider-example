@@ -8,7 +8,15 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        user.hasMany(models.oauth_client, {
+          foreignKey: 'user_id',
+          as: 'oauth_clients'
+        });
+
+        user.hasMany(models.authorization_code, {
+          foreignKey: 'user_id',
+          as: 'authorization_codes'
+        });
       }
     }
   });
