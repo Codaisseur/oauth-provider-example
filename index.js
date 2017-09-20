@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const morgan = require('morgan');
+const { debugStream, winstonStream } = require('./utils/logging');
 const favicon = require('serve-favicon');
 const static = require('serve-static');
 const cookieParser = require('cookie-parser');
@@ -8,7 +10,6 @@ const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
 const flash = require('express-flash');
-const logger = require('./utils/logger');
 const models = require('./models');
 
 const config = require('config');
@@ -31,6 +32,10 @@ app
     maxAge: 31536000,
     includeSubdomains: true
   }))
+
+  // Set up logging
+  .use(morgan('dev', debugStream))
+  .use(morgan('combined', winstonStream))
 
   // Static files
   .use(favicon('./public/favicon.ico'))

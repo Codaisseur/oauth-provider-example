@@ -31,6 +31,7 @@ const write = (writeFunction) => ({
  * Winston logger stream for the morgan plugin
  */
 const winstonStream = stream(write(logger.info))
+module.exports.winstonStream = winstonStream;
 
 // Configure the debug module
 process.env.DEBUG = config.debug
@@ -40,6 +41,7 @@ const debug = Debug('app:oauth:response')
  * Debug stream for the morgan plugin
  */
 const debugStream = stream(write(debug))
+module.exports.debugStream = debugStream;
 
 /**
  * Exports a wrapper for all the loggers we use in this configuration
@@ -48,7 +50,7 @@ const format = (scope, message) => `[${scope}] ${message}`
 
 const parse = (args) => (typeof(args) === 'array' && args.length > 1) ? args.slice(1) : ''
 
-const Logger = (scope) => {
+module.exports.Logger = (scope) => {
   const fullScope = `app:oauth:${scope || config.context || 'general'}`
   const scopeDebug = Debug(fullScope)
   return {
@@ -65,5 +67,3 @@ const Logger = (scope) => {
     error: (message) => logger.error(format(fullScope, message), parse(arguments))
   }
 }
-
-module.exports = Logger;
