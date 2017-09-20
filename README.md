@@ -12,3 +12,16 @@ database:
 ```bash
 $ yarn run db:create
 ```
+
+## Creating Models
+
+Create models from the command line like so:
+
+```bash
+$ node_modules/.bin/sequelize model:create \
+    --underscored \
+    --name user \
+    --attributes name:string,email:string,password:string
+```
+
+_**Note** the comma separated list of attributes!_
