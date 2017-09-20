@@ -1,21 +1,23 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var authorization_code = sequelize.define('authorization_code', {
+  var access_token = sequelize.define('access_token', {
     client_id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
-    authorization_code: DataTypes.TEXT,
-    expires_at: DataTypes.DATE
+    access_token: DataTypes.TEXT,
+    access_token_expires_at: DataTypes.DATE,
+    refresh_token: DataTypes.TEXT,
+    refresh_token_expires_at: DataTypes.DATE
   }, {
     underscored: true,
     classMethods: {
       associate: function(models) {
-        authorization_code.belongsTo(models.user, {
+        access_token.belongsTo(models.user, {
           onDelete: 'CASCADE',
           foreignKey: 'user_id',
           as: 'resource_owner'
         });
 
-        authorization_code.belongsTo(models.oauth_client, {
+        access_token.belongsTo(models.oauth_client, {
           onDelete: 'CASCADE',
           foreignKey: 'client_id',
           as: 'client'
@@ -23,5 +25,5 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-  return authorization_code;
+  return access_token;
 };

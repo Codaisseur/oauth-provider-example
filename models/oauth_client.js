@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         oauth_client.belongsTo(models.user, {
           onDelete: 'CASCADE',
           foreignKey: 'user_id',
-          as: 'owner'
+          as: 'resource_owner'
         });
 
         oauth_client.hasMany(models.authorization_code, {

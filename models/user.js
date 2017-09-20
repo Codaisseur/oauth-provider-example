@@ -10,12 +10,17 @@ module.exports = (sequelize, DataTypes) => {
       associate: function(models) {
         user.hasMany(models.oauth_client, {
           foreignKey: 'user_id',
-          as: 'oauth_clients'
+          as: 'clients'
         });
 
         user.hasMany(models.authorization_code, {
           foreignKey: 'user_id',
           as: 'authorization_codes'
+        });
+
+        user.hasMany(models.access_token, {
+          foreignKey: 'user_id',
+          as: 'access_tokens'
         });
       }
     }
