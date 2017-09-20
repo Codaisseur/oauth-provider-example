@@ -15,6 +15,10 @@ const config = require('config');
 const port = config.get('port');
 const secret = config.get('secret');
 
+// Controllers
+const landingPagesController = require('./controllers/landingPages');
+const userController = require('./controllers/user');
+
 const app = express()
 
 app
@@ -45,8 +49,10 @@ app
   // Flash messages support
   .use(flash())
 
-  .get('/', (req, res) => {
-    res.json({ message: 'Hello, class' })
-  })
+  // Use pug for the views
+  .set('view engine', 'pug')
+
+  .use(landingPagesController)
+  .use(userController)
 
   .listen(port);

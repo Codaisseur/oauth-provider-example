@@ -1,0 +1,19 @@
+html
+  head
+    include _head
+  body
+    #app.flex.flex-column
+      main.flex.flex-column
+        include _header
+        include _flash
+        .flex.flex-row.flex-1.clear
+          .flex.flex-column.col.col-12
+            main.home.flex.flex-column.flex-1.clear
+              #main.home.block.center-element
+                block title
+                  h3 Welcome to Codaisseur
+
+                block content
+                  p This is where your account is.
+
+    include _footer

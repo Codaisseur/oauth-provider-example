@@ -1,0 +1,32 @@
+extends _layout
+
+block page_title
+  | Create Your Account
+
+block title
+  h3
+    | Create Your Account
+
+block content
+  p One account, all of Codaisseur
+  form#sign-up.flex.flex-column.flex-space-between(action=`/sign-up?client_id=${client_id}&redirect_uri=${redirect_uri}` method="post")
+    .flex.flex-column.col.col12
+      input(type='text', placeholder='Name', name='name' value=user.name class=(errors.name ? "error" : ""))
+      if errors.name
+        small.error= errors.name
+    .flex.flex-column.col.col12
+      input(type='email', placeholder='Email', name='email' value=user.email class=(errors.email ? "error" : ""))
+      if errors.email
+        small.error= errors.email
+    .flex.flex-column.col.col12
+      input(type='password', placeholder='Password', name='password' class=(errors.password || errors.password_confirmation ? "error" : ""))
+      if errors.password
+        small.error= errors.password
+    .flex.flex-column.col.col12
+      input(type='password', placeholder='Retype Password', name='password_confirmation' class=(errors.password_confirmation ? "error" : ""))
+      if errors.password_confirmation
+        small.error= errors.password_confirmation
+    button.button-primary.col.col-12(type='submit') Sign up
+  p
+    | Do you already have an account?
+    a(href="/sign-in")  Sign in

@@ -1,0 +1,21 @@
+extends _layout
+
+block page_title
+  | Sign Into Your Account
+
+block title
+  h3
+    | Sign Into Your Account
+
+block content
+  p One account, all of Codaisseur
+  form#sign-in.flex.flex-column.flex-space-between(action=`/sign-in?client_id=${client_id}&redirect_uri=${redirect_uri}` method="post")
+    input(type="hidden" name="strategy" value="local")
+    .flex.flex-column.col.col12
+      input(type='email', placeholder='Email', name='email')
+    .flex.flex-column.col.col12
+      input(type='password', placeholder='Password', name='password')
+    button.button-primary.col.col-12(type='submit') Sign in
+  p
+    | No account yet?
+    a(href="/sign-up")  Sign up

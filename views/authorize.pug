@@ -1,0 +1,23 @@
+extends _layout
+
+block page_title
+  | Authorize #{client.name} to Access Your Account
+
+block title
+  h3
+    | Authorize
+    strong  #{client.name}
+    |  to Access Your Account
+
+block content
+  p Hi #{user.email}
+  p
+    strong #{client.name}
+    |  is requesting
+    strong  #{client.scope} access
+    |  to your account.
+  p Do you approve?
+  form.flex.flex-column.flex-space-between(action=`/oauth/authorize?client_id=${client.client_id}&redirect_uri=${redirect_uri}`, method='post' id='authorize')
+    .flex.flex-row.col.col12
+      input#deny.button.col.col-4(type='submit', value='Deny', name='cancel')
+      input#allow.button-primary.col.col-5(type='submit', name='allow' value='Allow')

@@ -1,0 +1,205 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,400,300,500,600,700);
+
+html, body {
+  font-family: 'Poppins', 'Helevetica', 'Arial', 'sans-serif';
+  color: #333;
+  height: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #D32F2F;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #dc3a3a;
+}
+
+.button {
+  text-align: center;
+}
+
+.button-primary {
+  padding: 0.6em 1.2em;
+  background: #D32F2F;
+  color: #ffffff;
+  border: 1px solid #bf2b2b;
+  transition: background 0.2s;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background: #dc3a3a;
+  color: #ffffff;
+}
+
+#app {
+  height: 100%;
+}
+
+/* ======================================= */
+/* Header and Title Bar */
+/* ======================================= */
+
+header.title-bar {
+  padding: 10px 0 10px 10px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+header.title-bar img.logo {
+  width: 100%;
+  max-width: 140px;
+  margin-bottom: -6px;
+}
+
+header.title-bar span.title {
+  color: #969696;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-left: 7px;
+}
+
+
+/* ======================================= */
+/* Home Page */
+/* ======================================= */
+
+main.home {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+main.home img.logo {
+  width: 100%;
+  max-width: 400px;
+}
+
+main.home h3.title {
+  color: #969696;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+main.home .button.login,
+main.home .button.signup {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+main.home .button.login {
+  background: none;
+  border: 2px solid #CFCFCF;
+  color: #999;
+}
+
+main.home .button.login:hover,
+main.home .button.login:focus {
+  background: none;
+  border: 2px solid #31D8A0;
+  color: #31D8A0;
+}
+
+/* ======================================= */
+/* Signup and Login */
+/* ======================================= */
+
+
+main.login fieldset {
+  padding: 10px 0;
+}
+
+main.login fieldset input {
+  width: 100%;
+  padding: 1.4em 0.7em;
+}
+
+main.login .button-primary {
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+  margin-top: 40px;
+  width: 100%;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  padding: 10px 0;
+  background: #0093D5;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.flash-message.error {
+  background: #D32F2F;
+}
+
+.flash-message.success {
+  background: #00AA86;
+}
+
+.flash-message.info {
+  background: #f5b723;
+}
+
+#app form {
+  padding: 10px 0;
+}
+
+#app form input {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+#app form button {
+  margin-top: 10px;
+}
+
+#app form input.error {
+  border-color: #D32F2F;
+}
+
+#app form small.error {
+  color: #D32F2F;
+}
+
+/* ======================================= */
+/* Authorize */
+/* ======================================= */
+
+#allow.button-primary {
+  margin-left: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: #969696;
+  font-weight: 100;
+  font-size: small;
+}
+
+footer a {
+  color: #969696;
+}
