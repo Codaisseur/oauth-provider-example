@@ -13,6 +13,18 @@ database:
 $ yarn run db:create
 ```
 
+Then run the migrations:
+
+```bash
+$ yarn run db:migrate
+```
+
+If you ever want to roll back the last migration, you can run:
+
+```bash
+$ yarn run db:rollback
+```
+
 ## Creating Models
 
 Create models from the command line like so:
@@ -25,3 +37,4 @@ $ node_modules/.bin/sequelize model:create \
 ```
 
 _**Note** the comma separated list of attributes!_
+
