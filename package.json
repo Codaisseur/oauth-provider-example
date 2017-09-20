@@ -1,0 +1,9 @@
+{
+  "name": "oauth-provider",
+  "version": "1.0.0",
+  "description": "OAuth2 Provider Example",
+  "main": "index.js",
+  "repository": "https://github.com/Codaisseur/oauth-provider-example.git",
+  "author": "Codaisseur <support@codaisseur.com>",
+  "license": "MIT"
+}
