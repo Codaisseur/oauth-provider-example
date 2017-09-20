@@ -46,23 +46,23 @@ const debugStream = stream(write(debug))
  */
 const format = (scope, message) => `[${scope}] ${message}`
 
-const parse = (args) => (args.length > 0) ? args : ''
+const parse = (args) => (typeof(args) === 'array' && args.length > 1) ? args.slice(1) : ''
 
 const Logger = (scope) => {
   const fullScope = `app:oauth:${scope || config.context || 'general'}`
   const scopeDebug = Debug(fullScope)
   return {
-    debug: (message, args) => {
+    debug: (message) => {
       if (isProduction) {
-        logger.debug(format(fullScope, message), parse(args))
+        logger.debug(format(fullScope, message), parse(arguments))
       }
-      scopeDebug(message, parse(args))
+      scopeDebug(message, parse(arguments))
     },
-    verbose: (message, args) => logger.verbose(format(fullScope, message), parse(args)),
-    silly: (message, args) => logger.silly(format(fullScope, message), parse(args)),
-    info: (message, args) => logger.info(format(fullScope, message), parse(args)),
-    warn: (message, args) => logger.warn(format(fullScope, message), parse(args)),
-    error: (message, args) => logger.error(format(fullScope, message), parse(args))
+    verbose: (message) => logger.verbose(format(fullScope, message), parse(arguments)),
+    silly: (message) => logger.silly(format(fullScope, message), parse(arguments)),
+    info: (message) => logger.info(format(fullScope, message), parse(arguments)),
+    warn: (message) => logger.warn(format(fullScope, message), parse(arguments)),
+    error: (message) => logger.error(format(fullScope, message), parse(arguments))
   }
 }
 
