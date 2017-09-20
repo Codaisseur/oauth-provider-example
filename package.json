@@ -6,6 +6,9 @@
   "repository": "https://github.com/Codaisseur/oauth-provider-example.git",
   "author": "Codaisseur <support@codaisseur.com>",
   "license": "MIT",
+  "scripts": {
+    "db:create": "node_modules/.bin/sequelize db:create"
+  },
   "dependencies": {
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
