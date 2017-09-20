@@ -1,0 +1,8 @@
+{
+  "logger": {
+    "debug": "app*",
+    "console": {
+      "level": "debug"
+    }
+  }
+}
