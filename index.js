@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
 const flash = require('express-flash');
+const logger = require('./utils/logger');
 const models = require('./models');
 
 const config = require('config');

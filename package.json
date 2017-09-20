@@ -20,15 +20,18 @@
     "config": "^1.26.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "debug": "^3.0.1",
     "express": "^4.15.4",
     "express-flash": "^0.0.2",
     "express-session": "^1.15.5",
     "helmet": "^3.8.1",
+    "morgan": "^1.8.2",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.8.4",
     "serve-favicon": "^2.4.4",
-    "serve-static": "^1.12.4"
+    "serve-static": "^1.12.4",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "sequelize-cli": "^3.0.0-3"
